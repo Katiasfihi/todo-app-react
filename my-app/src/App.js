@@ -13,6 +13,8 @@ function App() {
   const [todos, setTodos] = useState([])
   const [status, setStatus] = useState('All')
   const [filteredTodos, setFilteredTodos] = useState([])
+  const [update, setUpdate] = useState([])
+
 
   useEffect(() => {
     filterHandler()}, [todos, status])
@@ -37,7 +39,7 @@ function App() {
         <h1>Katia's Todo List </h1>
       </header>
       <Form inputText={inputText} todos={todos} setTodos={setTodos} setInputText={setInputText} setStatus={setStatus}/>
-      <TodoList todos={todos} setTodos={setTodos} filteredTodos={filteredTodos}/>
+      <TodoList todos={todos} setTodos={setTodos} filteredTodos={filteredTodos} update={update} setUpdate={setUpdate} />
     </div>
   );
 }
